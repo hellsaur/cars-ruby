@@ -1,0 +1,5 @@
+<h1>Types of Cars</h1>
+<% @makes.each do |make| %>
+
+<p><a href="/makes/<%= make.id %>"><%= make.model %>.</a> Year:<%= make.color %>.</p>
+<% end %>

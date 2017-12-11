@@ -1,0 +1,5 @@
+<h1>Dealers in US</h1>
+<% @dealers.each do |dealer| %>
+
+<p><a href="/dealers/<%= dealer.id %>"><%= dealer.city %>.</a> Address: <%= dealer.address %>.</p>
+<% end %>
