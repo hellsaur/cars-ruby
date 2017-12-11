@@ -1,0 +1,15 @@
+<h1 class="">New Dealer</h1>
+
+<%= form_for(@dealer, :html => {:class => "form"}) do |f| %>
+  <div class="">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+
+  </div>
+  <div class="">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+
+  </div>
+  <%= f.submit %>
+<% end %>

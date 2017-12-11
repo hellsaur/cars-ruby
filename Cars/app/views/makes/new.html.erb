@@ -1,0 +1,20 @@
+<h1>New Car Model</h1>
+
+<%= form_for(@make, :html => {:class => "form"}) do |f| %>
+  <div class="">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+
+  </div>
+  <div class="">
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+
+  </div>
+  <div class="">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+
+  </div>
+  <%= f.submit %>
+<% end %>
