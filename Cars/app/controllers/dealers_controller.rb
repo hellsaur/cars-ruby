@@ -35,12 +35,10 @@ def update
   end
 
   def destroy
-  if @dealer.destroy!
-  redirect_to makes_path
-else
-  redirect_back fallback_location:@dealer
-  end
-end 
+    @dealer = Dealer.find(params[:id])
+  		@dealer.delete
+  		redirect_to dealers_path
+end
   private
 
     def dealer_params
