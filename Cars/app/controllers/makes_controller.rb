@@ -1,4 +1,6 @@
 class MakesController < ApplicationController
+before_action :set_make, only: [:show, :edit, :update, :destroy]
+
   def index
     @makes = Make.all
 end
@@ -34,10 +36,17 @@ def update
   end
 
   def destroy
-    if @make.destroy
-      redirect_to make_path
-    else
-      redirect_back fallback_location: @make
-    end
+    @make.destroy!
+      redirect_to makes_path
+  end
+
+  private
+
+  def make_params
+    params.require(:make).permit(:model, :year, :color)
+  end
+
+  def set_make
+    @make = Make.find(params[:id])
   end
 end

@@ -6,4 +6,5 @@
 
 <a href="/makes/">Check Cars</a>
 <a href="/dealers/">Back</a>
-<a href="/dealers/new">Add New Location</a>
+<%= link_to 'Edit Dealer', edit_dealer_path(@dealer) %>
+<%= link_to 'Delete dealer', dealer_path(@dealer), method: :delete %>

@@ -1,4 +1,6 @@
 class DealersController < ApplicationController
+before_action :set_dealer, only: [:show, :edit, :update, :destroy]
+
   def index
     @dealers = Dealer.all
 end
@@ -33,10 +35,20 @@ def update
   end
 
   def destroy
-    if @dealer.destroy
-      redirect_to makes_path
-    else
-      redirect_back fallback_location: @dealer
-    end
+  if @dealer.destroy!
+  redirect_to makes_path
+else
+  redirect_back fallback_location:@dealer
   end
+end 
+  private
+
+    def dealer_params
+      params.require(:dealer).permit(:city, :address)
+    end
+
+    def set_dealer
+      @dealer = Dealer.find(params[:id])
+    end
+
 end
